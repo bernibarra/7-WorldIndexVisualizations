@@ -1,28 +1,63 @@
 ---
-title: "index"
-output: html_document
+title: "a7 Collaboration"
+subtitle: "Blank Dataset"
+authors: "Bernabe Ibarra | Feng Yu Yeh | Sean Le | Thomas That"
+date: "2019-02-25"
+output:
+  html_document:
+      smooth_scroll: TRUE
 ---
 
+<style>
+body{
+  font-family: 'Verdana', Georgia;
+  font-size: 15px;
+}
+
+h1,h3,h4 {
+  font-family: 'Helvetica', Georgia;
+}
+
+h1{
+  background-color: blue;
+  color: #FFFFFF;
+  text-shadow: 2px 2px 4px #000000;
+  font-family: 'Impact', Georgia;
+  padding: 20px;
+}
+
+.container { width: 1000px; }
+
+h2{
+  background-color: green;
+  color: #FFFFFF;
+  font-family: 'Heletica', Georgia;
+  text-shadow: 1px 1px 2px #000000;
+}
+</style>
+
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = F)
+source("scripts/list_info.R")
 ```
 
-## R Markdown
+## Summary
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+**(citing at least 3 values calculated from the data)**
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
+## Chart One:
+
+Paragraph
 ```{r cars}
 summary(cars)
 ```
 
-## Including Plots
 
+## Chart Two:
 You can also embed plots, for example:
 
 ```{r pressure, echo=FALSE}
 plot(pressure)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
