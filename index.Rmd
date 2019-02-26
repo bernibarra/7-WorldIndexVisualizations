@@ -39,25 +39,44 @@ h2{
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = F)
 source("scripts/list_info.R")
+source("scripts/chart2.R")
+source("scripts/Graph1.R")
+source("scripts/summary_calculations.R")
+library(knitr)
+library(dplyr)
+library(plotly)
+library(ggplot2)
+wdvp_df <- read.csv("data/wdvp.csv", stringsAsFactors = F)
+
 ```
 
 ## Summary
+mean average
+avg_health_expenditure_pct
+avg_world_happiness
+avg_health_expenditure_per_person
+
+```{r}
+answers <- summary_calculations(wdvp_df)
+answers$avg_health_expenditure_pct
+answers$avg_world_happiness
+answers$avg_health_expenditure_per_person
+```
 
 **(citing at least 3 values calculated from the data)**
 
 
-## Chart One:
+## Visualization 1:
+This graphs the average happiness score using ggplot.
 
-Paragraph
-```{r cars}
-summary(cars)
+```{r}
+viz_1 <- make_graph(wdvp_df)
+viz_1
 ```
 
+## Visualization 2:
 
-## Chart Two:
-You can also embed plots, for example:
+This graphs the the unemplyment rate using Plotly.
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+
 
