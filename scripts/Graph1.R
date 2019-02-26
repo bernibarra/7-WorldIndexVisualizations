@@ -27,7 +27,7 @@ make_graph <- function(data) {
       scale_x_discrete(
         labels = c(
           "100 thousand - 1 million", "1 million - 10 million",
-          "10 million - 100 million", "100 million - 1 billion", 
+          "10 million - 100 million", "100 million - 1 billion",
           "1 billion - 10 billion"
         )
       ) +
