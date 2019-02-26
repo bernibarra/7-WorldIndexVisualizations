@@ -1,7 +1,7 @@
 library("dplyr")
 summary_calculations <- function(dataset) {
   results <- list()
-  transformed_data <- transform(data, world_happiness_report_score =
+  transformed_data <- transform(dataset, world_happiness_report_score =
                                   as.numeric(world_happiness_report_score),
                                 health_expenditure_pct_of_gdp =
                                   as.numeric(health_expenditure_pct_of_gdp),
@@ -23,4 +23,3 @@ summary_calculations <- function(dataset) {
 
   return (results)
 }
-  

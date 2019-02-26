@@ -1,6 +1,6 @@
 ---
 title: "a7 Collaboration"
-subtitle: "Blank Dataset"
+subtitle: "World Data Visualization Dataset"
 authors: "Bernabe Ibarra | Feng Yu Yeh | Sean Le | Thomas That"
 date: "2019-02-25"
 output:
@@ -19,8 +19,8 @@ h1,h3,h4 {
 }
 
 h1{
-  background-color: blue;
-  color: #FFFFFF;
+  background-color: #2364AA;
+  color: #3DA5D9;
   text-shadow: 2px 2px 4px #000000;
   font-family: 'Impact', Georgia;
   padding: 20px;
@@ -29,35 +29,62 @@ h1{
 .container { width: 1000px; }
 
 h2{
-  background-color: green;
-  color: #FFFFFF;
-  font-family: 'Heletica', Georgia;
+  background-color: #73BFB8;
+  color: #ffffff;
+  font-weight: bolder;
+  font-family: 'Verdana', Georgia;
   text-shadow: 1px 1px 2px #000000;
+}
+
+h3{
+  color: #2364AA;
+  font-family: 'Verdana', Georgia;
 }
 </style>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = F)
 source("scripts/list_info.R")
+source("scripts/summary_calculations.R")
+source("scripts/Graph1.R")
+source("scripts/chart2.R")
+library(knitr)
+library(dplyr)
+library(plotly)
+library(ggplot2)
+wdvp_df <- read.csv("data/wdvp.csv", stringsAsFactors = F)
 ```
 
 ## Summary
 
-**(citing at least 3 values calculated from the data)**
+```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+answers <- summary_calculations(wdvp_df)
+avg_1 <- round(answers$avg_health_expenditure_pct, 1)
+avg_2 <- round(answers$avg_world_happiness, 1)
+avg_3 <- round(answers$avg_health_expenditure_per_person, 1)
+```
+The World Data Visualization dataset describes countries using over 30 attributes. Our group came up with cross-national averages of health expenditure, world happiness, and expenditure per person. The averages are as follows:
+
+#### Mean Average Between Countries
+- Health Expenditure PTC = **`r avg_1`**
+- World Happiness = **`r avg_2`**
+- Health Expenditure Per Person = **`r avg_3`**
 
 
-## Chart One:
+## Visualization 1:
+This graphs the average happiness score using ggplot.
 
-Paragraph
-```{r cars}
-summary(cars)
+```{r message=FALSE, warning=FALSE}
+viz_1 <- make_graph(wdvp_df)
+viz_1
 ```
 
+## Visualization 2:
 
-## Chart Two:
-You can also embed plots, for example:
+This graphs the the unemplyment rate using Plotly.
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+# ```{r}
+# viz_2 <- chart_2(wdvp_df)
+# viz_2
+# ```
 
