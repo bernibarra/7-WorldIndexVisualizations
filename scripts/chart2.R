@@ -8,7 +8,7 @@ chart_2 <- function(data){
   data_frame_num <- transform(data, education_expenditure_pct_of_gdp =
                             as.numeric(education_expenditure_pct_of_gdp),
                           unemployment_pct = as.numeric(unemployment_pct))
-  
+
   data_for_graph <- data_frame_num %>%
     select(country_name, education_expenditure_pct_of_gdp, unemployment_pct) %>%
     rename(country = country_name,
