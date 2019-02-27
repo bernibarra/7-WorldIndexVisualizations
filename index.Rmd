@@ -83,8 +83,8 @@ viz_1
 
 This graphs the the unemplyment rate using Plotly.
 
-# ```{r}
-# viz_2 <- chart_2(wdvp_df)
-# viz_2
-# ```
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+viz_2 <- chart_2(wdvp_df)
+viz_2
+```
 
