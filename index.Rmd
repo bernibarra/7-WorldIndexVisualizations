@@ -63,7 +63,7 @@ avg_1 <- round(answers$avg_health_expenditure_pct, 1)
 avg_2 <- round(answers$avg_world_happiness, 1)
 avg_3 <- round(answers$avg_health_expenditure_per_person, 1)
 ```
-The World Data Visualization dataset describes countries using over 30 attributes. Our group came up with cross-national averages of health expenditure, world happiness, and expenditure per person. The averages are as follows:
+The World Data Visualization dataset describes countries using various attributes. Each country, for example, has values about its population, surface area, economics, and other report indices about health or happiness. Our group came up with cross-national averages of health expenditure, world happiness, and expenditure per person. The averages are as follows:
 
 #### Mean Average Between Countries
 - Health Expenditure PTC = **`r avg_1`**
@@ -72,7 +72,7 @@ The World Data Visualization dataset describes countries using over 30 attribute
 
 
 ## Visualization 1:
-This graphs the average happiness score using ggplot.
+This graphs the average happiness score using ggplot. The average happiness score is on the y-axis and the population ranges on the x-axis. Each bar is also encoded according to population size.
 
 ```{r message=FALSE, warning=FALSE}
 viz_1 <- make_graph(wdvp_df)
@@ -81,7 +81,7 @@ viz_1
 
 ## Visualization 2:
 
-This graphs the the unemplyment rate using Plotly.
+This interactive graph plots the unemployment rate using Plotly. The y-axis represents the unemployment rate while the x-axis represents the GDP Education Expenditure. Tip: hovering over each item shows the country name and the exact measures. 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 viz_2 <- chart_2(wdvp_df)
